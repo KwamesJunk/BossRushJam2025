@@ -6,7 +6,7 @@ public class MediumHitState : State
 {
     float _timekeeper;
 
-    public MediumHitState(StateMachine stateMachine) : base(stateMachine)
+    public MediumHitState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 

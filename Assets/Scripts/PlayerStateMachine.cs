@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class PlayerStateMachine : MonoBehaviour
 {
     [SerializeField] private string _currentStateName;
     [SerializeField] public InputReader Reader;

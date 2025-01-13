@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DeadState : State
 {
-    public DeadState(StateMachine stateMachine) : base(stateMachine)
+    public DeadState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 

@@ -6,7 +6,7 @@ public class JumpState : State
 {
     bool goingUp;
     float timeKeeper;
-    public JumpState(StateMachine stateMachine) : base(stateMachine)
+    public JumpState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
         _name = "Jump";
     }

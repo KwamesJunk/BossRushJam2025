@@ -2,14 +2,14 @@ using UnityEngine;
 
 public abstract class State
 {
-    protected StateMachine _stateMachine;
+    protected PlayerStateMachine _stateMachine;
     protected Animator _animator;
     protected LifeStats _lifeStats;
     protected string _name;
 
     public string Name => _name;
 
-    public State(StateMachine stateMachine)
+    public State(PlayerStateMachine stateMachine)
     {
         _stateMachine = stateMachine;
         _animator = stateMachine.CharAnimator;

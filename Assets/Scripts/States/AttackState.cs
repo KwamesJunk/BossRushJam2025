@@ -8,7 +8,7 @@ public class AttackState : State
     int _comboIndex;
     List<AttackCombo.AttackInfo> _comboAttacks;
 
-    public AttackState(StateMachine stateMachine) : base(stateMachine)
+    public AttackState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
         _comboAttacks = stateMachine.BasicCombo.Attacks;
     }

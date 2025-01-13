@@ -7,7 +7,7 @@ public class LocomotionState : State // may refactor this into a locomotion func
     Vector3 _horizontalDirection;
     float _speed;
 
-    public LocomotionState(StateMachine stateMachine) : base(stateMachine)
+    public LocomotionState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
         _name = "Locomotion";
     }
