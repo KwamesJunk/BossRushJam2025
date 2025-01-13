@@ -124,7 +124,7 @@ public class LolaRun : MonoBehaviour
         
         if (_animator.IsInTransition(0))
         {
-            if (nextAnimatorStateInfo.normalizedTime * nextAnimatorClipInfo.Length < _attackCombo.Attacks[comboIndex].MinNormalizedDuration) return;
+            if (nextAnimatorStateInfo.normalizedTime * nextAnimatorClipInfo.Length < _attackCombo.Attacks[comboIndex].minDuration) return;
             
             //StartNextAttack
         }

@@ -9,10 +9,14 @@ public class AttackCombo : ScriptableObject
     [Serializable]
     public struct AttackInfo
     {
-        public string AnimationName;
-        public float TransitionDuration;
-        public float MinNormalizedDuration;
-        public float Damage;
+        public string animationName;
+        public float transitionDuration;
+        public float minDuration;
+        public float damage;
+        public Vector3 hitBoxPosition;
+        public Vector3 hitBoxSize;
+        public float hitBoxActivationTime;
+        public float hitBoxDeactivationTime;
         // public float Knockback
         // public Vector3 KnockbackDirection
     }
