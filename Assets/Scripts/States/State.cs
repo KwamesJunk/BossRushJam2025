@@ -12,8 +12,8 @@ public abstract class State
     public State(PlayerStateMachine stateMachine)
     {
         _stateMachine = stateMachine;
-        _animator = stateMachine.CharAnimator;
-        _lifeStats = stateMachine.Life;
+        _animator = stateMachine.charAnimator;
+        _lifeStats = stateMachine.lifeStats;
     }
 
     public abstract void Enter();

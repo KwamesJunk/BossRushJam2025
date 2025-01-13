@@ -24,13 +24,13 @@ public class InputReader : MonoBehaviour
     void Awake ()
     {
         _moveAction = _inputActions.FindActionMap("Player").FindAction("Move");
-        _inputActions.FindActionMap("Standard").FindAction("Jump").performed += JumpPerformed;
+        _inputActions.FindActionMap("Player").FindAction("Jump").performed += JumpPerformed;
         
-        _walkAction = _inputActions.FindActionMap("Standard").FindAction("Walk");
+        _walkAction = _inputActions.FindActionMap("Player").FindAction("Move");
         _walkAction.performed += WalkStarted;
         _walkAction.canceled += WalkFinished;
         
-        _attackAction = _inputActions.FindActionMap("Standard").FindAction("Attack");
+        _attackAction = _inputActions.FindActionMap("Player").FindAction("Attack");
         _attackAction.performed += AttackPerformed;
     }
 

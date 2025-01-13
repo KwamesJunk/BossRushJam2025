@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -11,11 +12,13 @@ public class HitBox : MonoBehaviour
     private BoxCollider _boxCollider;
     //[SerializeField] ParticleSystem _particleSystem;
     [SerializeField] bool _showHitBox;
+    [SerializeField] GameObject _debugView;
 
     private void Start()
     {
-        transform.GetChild(0).gameObject.SetActive(_showHitBox);
+        //transform.GetChild(0).gameObject.SetActive(_showHitBox);
        _boxCollider = GetComponent<BoxCollider>();
+        _debugView.SetActive(_showHitBox);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,11 +39,6 @@ public class HitBox : MonoBehaviour
            // }
         }
     }
-
-    // public void SetSizeAndPosition(Vector3 localPosition, Vector3 size) {
-    //     _boxCollider.center = localPosition;
-    //     _boxCollider.size = size;
-    // }
 
     private void OnEnable()
     {

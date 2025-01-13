@@ -44,8 +44,8 @@ public class LocomotionState : State // may refactor this into a locomotion func
         }
 
         Vector3 horizontalVelocity = _horizontalDirection * _speed;
-        _stateMachine.CharAnimator.SetBool("Is Grounded", _stateMachine.IsGrounded());
-        _stateMachine.CharAnimator.SetFloat("Speed", _speed / _stateMachine.MaxRunSpeed);
+        //_stateMachine.charAnimator.SetBool("Is Grounded", _stateMachine.IsGrounded());
+        //_stateMachine.charAnimator.SetFloat("Speed", _speed / _stateMachine.MaxRunSpeed);
 
         _stateMachine.MoveCharacter(horizontalVelocity);
     }

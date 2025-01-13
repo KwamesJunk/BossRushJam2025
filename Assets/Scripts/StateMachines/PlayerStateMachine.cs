@@ -1,8 +1,9 @@
 using UnityEngine;
 
+[RequireComponent (typeof(InputReader))]
 public class PlayerStateMachine : StateMachine
 {
-    [SerializeField] public InputReader Reader;
+    private InputReader _reader;
     [SerializeField] public float MaxRunSpeed;
     [SerializeField] public float BaseGravity;
     [SerializeField] public AttackCombo BasicCombo;
@@ -10,19 +11,21 @@ public class PlayerStateMachine : StateMachine
     [SerializeField] public Transform weaponMeshSlot;
     [SerializeField] private Transform _weaponSlot;
 
-    public bool IsMoving => Reader.Movement != Vector2.zero;
+    public bool IsMoving => _reader.Movement != Vector2.zero;
     public Vector3 HorizontalDirection;
     public float CurrentGravity;
     public float VerticalSpeed;
     public Vector3 currentVelocity;
     public Transform WeaponSlot => _weaponSlot;
-
+    public InputReader Reader => _reader;
 
     void Start()
     {
+        InitializeComponents();
+        _reader = GetComponent<InputReader>();
+
         Transition(new LocomotionState(this));
         CurrentGravity = BaseGravity;
-        //rootOffset = Root.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -45,21 +48,12 @@ public class PlayerStateMachine : StateMachine
         }
     }
 
-    public void Transition (State newState)
-    {
-        Debug.Log($"Transition from {_currentState} to {newState}");
-        _currentState?.Exit();
-        _currentState = newState;
-        _currentState.Enter();
-
-        _currentStateName = _currentState.Name;
-    }
-
+    
     public void MoveCharacter(Vector3 movement)
     {
         Vector3 verticalVelocity = transform.up * VerticalSpeed;
 
-        CharController.Move((movement + verticalVelocity) * Time.deltaTime);
+        charController.Move((movement + verticalVelocity) * Time.deltaTime);
     }
 
     public void MoveCharacter()
@@ -69,7 +63,7 @@ public class PlayerStateMachine : StateMachine
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position+CharController.center+(Vector3.down*(CharController.height*0.5f)), Vector3.down, maxDistance: 0.1f);
+        return Physics.Raycast(transform.position+charController.center+(Vector3.down*(charController.height*0.5f)), Vector3.down, maxDistance: 0.1f);
     }
 
     // private void OnTakeDamage(int damage)
