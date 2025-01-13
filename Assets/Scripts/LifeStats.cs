@@ -7,7 +7,7 @@ public class LifeStats : MonoBehaviour
 {
     [SerializeField]private int _currentHp;
     public int CurrentHp => _currentHp;
-    public int MaxHP;
+    public int maxHP = 100;
     //public int Def;
     // weaknesses
     // strengths
@@ -15,6 +15,11 @@ public class LifeStats : MonoBehaviour
 
     public event Action<int> OnTakeDamage;
     public event Action OnDead;
+
+    private void Start()
+    {
+        _currentHp = maxHP;
+    }
 
     public void TakeDamage(int damage)
     {
