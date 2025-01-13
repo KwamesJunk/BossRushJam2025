@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class HitBox : MonoBehaviour
 {
     [SerializeField] GameObject _owner;
     [SerializeField] int _damage;
     [SerializeField] DamageType _damageType;
-    [SerializeField] BoxCollider _boxCollider;
+    private BoxCollider _boxCollider;
     //[SerializeField] ParticleSystem _particleSystem;
     [SerializeField] bool _showHitBox;
 
     private void Start()
     {
         transform.GetChild(0).gameObject.SetActive(_showHitBox);
-       // _particleSystem?.Stop();
+       _boxCollider = GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
