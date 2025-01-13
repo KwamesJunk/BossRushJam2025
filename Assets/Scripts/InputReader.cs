@@ -23,7 +23,7 @@ public class InputReader : MonoBehaviour
     
     void Awake ()
     {
-        _moveAction = _inputActions.FindActionMap("Standard").FindAction("Movement");
+        _moveAction = _inputActions.FindActionMap("Player").FindAction("Move");
         _inputActions.FindActionMap("Standard").FindAction("Jump").performed += JumpPerformed;
         
         _walkAction = _inputActions.FindActionMap("Standard").FindAction("Walk");

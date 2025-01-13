@@ -1,17 +1,11 @@
 using UnityEngine;
 
-public class PlayerStateMachine : MonoBehaviour
+public class PlayerStateMachine : StateMachine
 {
-    [SerializeField] private string _currentStateName;
     [SerializeField] public InputReader Reader;
     [SerializeField] public float MaxRunSpeed;
-    [SerializeField] public CharacterController CharController;
     [SerializeField] public float BaseGravity;
-    [SerializeField] public Animator CharAnimator;
     [SerializeField] public AttackCombo BasicCombo;
-    //[SerializeField] public GameObject Root;
-    //[SerializeField] public HitBox Weapon;
-    [SerializeField] public LifeStats Life;
     [SerializeField] public float jumpSpeed;
     [SerializeField] public Transform weaponMeshSlot;
     [SerializeField] private Transform _weaponSlot;
@@ -20,11 +14,9 @@ public class PlayerStateMachine : MonoBehaviour
     public Vector3 HorizontalDirection;
     public float CurrentGravity;
     public float VerticalSpeed;
-    [SerializeField]Vector3 rootOffset;
     public Vector3 currentVelocity;
     public Transform WeaponSlot => _weaponSlot;
 
-    private State _currentState;
 
     void Start()
     {
