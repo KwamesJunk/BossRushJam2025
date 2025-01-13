@@ -52,6 +52,5 @@ public class MediumHitState : State
 
     public override void Exit()
     {
-        _stateMachine.TeleportToRoot();
     }
 }

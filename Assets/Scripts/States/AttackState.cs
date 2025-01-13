@@ -18,7 +18,7 @@ public class AttackState : State
         _comboIndex = 0;
         _timekeeper = 0;
         //_stateMachine.Reader.OnAttack += NextComboAttack;
-        _animator.CrossFadeInFixedTime(_comboAttacks[0].AnimationName, 0.1f);
+        _animator.CrossFadeInFixedTime(_comboAttacks[0].animationName, 0.1f);
         //_stateMachine.Weapon.enabled = true;
     }
 
@@ -30,7 +30,7 @@ public class AttackState : State
 
         //Debug.Log($"{GetAnimName().name}: {GetNormalizedAnimTime()}");
 
-        if (normalizedTime > _comboAttacks[_comboIndex].MinNormalizedDuration) 
+        if (normalizedTime > _comboAttacks[_comboIndex].minDuration) 
         {
             //_stateMachine.Weapon.enabled = false;// TODO: move this to the animation
             if (_stateMachine.Reader.IsAttacking) {
@@ -58,7 +58,6 @@ public class AttackState : State
     public override void Exit()
     {
         //_stateMachine.Reader.OnAttack -= NextComboAttack;
-        _stateMachine.TeleportToRoot();
         //_stateMachine.Weapon.enabled = false;
     }
 
@@ -90,11 +89,10 @@ public class AttackState : State
     {
         if (_comboIndex >= _comboAttacks.Count - 1) return;
 
-        if (GetNormalizedAnimTime() < _comboAttacks[_comboIndex].MinNormalizedDuration) return;
-        _stateMachine.TeleportToRoot();
+        if (GetNormalizedAnimTime() < _comboAttacks[_comboIndex].minDuration) return;
 
         ++_comboIndex;
         _timekeeper = 0;
-        _animator.CrossFadeInFixedTime(_comboAttacks[_comboIndex].AnimationName, 0.1f);
+        _animator.CrossFadeInFixedTime(_comboAttacks[_comboIndex].animationName, 0.1f);
     }
 }

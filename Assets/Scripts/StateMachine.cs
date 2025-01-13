@@ -75,19 +75,6 @@ public class StateMachine : MonoBehaviour
         MoveCharacter(Vector3.zero);
     }
 
-    public void TeleportToRoot()
-    {
-        //return;
-        //Vector3 abc = Root.transform.localPosition;
-        //transform.position = Root.transform.position - abc;
-        //transform.rotation = Root.transform.rotation;
-        //CharAnimator.enabled = false;
-        //Root.transform.position = transform.position + abc;//Vector3.zero; 
-        //Root.transform.localRotation = Quaternion.identity;
-        //CharAnimator.enabled = true;
-        //Debug.Log("Teleport to Root");
-    }
-
     public bool IsGrounded()
     {
         return Physics.Raycast(transform.position+CharController.center+(Vector3.down*(CharController.height*0.5f)), Vector3.down, maxDistance: 0.1f);

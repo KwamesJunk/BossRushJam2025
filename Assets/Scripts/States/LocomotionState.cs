@@ -55,7 +55,6 @@ public class LocomotionState : State // may refactor this into a locomotion func
         _reader.OnAttack -= Attack;
         _lifeStats.OnTakeDamage -= TakeDamage;
         _reader.OnJump -= Jump;
-        _stateMachine.TeleportToRoot();
     }
 
     private void Attack()
