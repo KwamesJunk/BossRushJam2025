@@ -5,19 +5,24 @@ using UnityEngine;
 public class MediumHitState : State
 {
     float _timekeeper;
+    Vector3 _hitDirection;
 
-    public MediumHitState(PlayerStateMachine stateMachine) : base(stateMachine)
+    public MediumHitState(PlayerStateMachine stateMachine, Vector3 direction) : base(stateMachine)
     {
+        _hitDirection = direction;
     }
 
     public override void Enter()
-    {
+    { 
+
         if (_lifeStats.CurrentHp <= 0) {
             _stateMachine.Transition(new DeadState(_stateMachine));
             return;
         }
         _animator.CrossFadeInFixedTime("GotHit", 0.1f);
         _timekeeper = 0;
+
+        //_stateMachine.transform.rotation = Quaternion.LookRotation(-_hitDirection);
     }
 
     public override void Tick(float deltaTime)

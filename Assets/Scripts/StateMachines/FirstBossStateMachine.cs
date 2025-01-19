@@ -17,8 +17,9 @@ public class FirstBossStateMachine : StateMachine
         
     }
 
-    void OnTakeDamage(int damage)
+    void OnTakeDamage(int damage, Vector3 direction)
     {
+        transform.rotation = Quaternion.LookRotation(-direction);
         charAnimator.Play("TakeDamage");
     }
 }

@@ -28,7 +28,7 @@ public class HitBox : MonoBehaviour
 
         if (other.TryGetComponent<LifeStats>(out var lifeStats))
         {
-            lifeStats.TakeDamage(_damage);
+            lifeStats.TakeDamage(_damage, transform.forward);
             Debug.Log($"Just hit {other.name} for {_damage}!");
 
            // if (_particleSystem != null) { 

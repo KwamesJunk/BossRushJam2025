@@ -13,24 +13,38 @@ public class LifeStats : MonoBehaviour
     // strengths
     // ??
 
-    public event Action<int> OnTakeDamage;
+    public event Action<int, Vector3> OnTakeDamage;
     public event Action OnDead;
+    public event Action<int, int> OnHpChange;
 
     private void Start()
     {
         _currentHp = maxHP;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector3 direction)
     {
-        _currentHp -= damage;
-        if (damage <= 0 ) {
-            damage = 0;
+        int oldHp = _currentHp;
 
+        _currentHp -= damage;
+        if (_currentHp <= 0 ) {
+            _currentHp = 0;
+
+            OnHpChange(oldHp, 0);
             OnDead?.Invoke();
             return;
         }
         
-        OnTakeDamage?.Invoke(damage);
+        OnTakeDamage?.Invoke(damage, direction);
+        OnHpChange?.Invoke(oldHp, _currentHp);
     }
+
+    public void SetCurrentHP(int currentHP)
+    {
+        int oldHP = _currentHp;
+        _currentHp = currentHP;
+
+        OnHpChange?.Invoke(oldHP, currentHP);
+    }
+
 }
