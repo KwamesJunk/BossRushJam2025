@@ -68,7 +68,7 @@ public class LocomotionState : State // may refactor this into a locomotion func
 
     private void Attack()
     {
-        _stateMachine.Transition(new AttackState(_stateMachine));
+        _stateMachine.Transition(new AttackComboState(_stateMachine));
     }
 
     private void TakeDamage(int damage, Vector3 direction)

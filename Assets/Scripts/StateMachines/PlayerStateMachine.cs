@@ -6,7 +6,6 @@ public class PlayerStateMachine : StateMachine
     private InputReader _reader;
     [SerializeField] public float MaxRunSpeed;
     [SerializeField] public float BaseGravity;
-    [SerializeField] public AttackCombo BasicCombo;
     [SerializeField] public float jumpSpeed;
     [SerializeField] public Transform weaponMeshSlot;
     [SerializeField] private Transform _weaponSlot;
@@ -16,6 +15,8 @@ public class PlayerStateMachine : StateMachine
     public float CurrentGravity;
     public float VerticalSpeed;
     public Vector3 currentVelocity;
+    public bool nextAttackOkay;
+
     public Transform WeaponSlot => _weaponSlot;
     public InputReader Reader => _reader;
 

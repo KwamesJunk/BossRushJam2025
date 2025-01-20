@@ -13,6 +13,10 @@ PrefabInstance:
       value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 2519470995881736510, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519470995881736510, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -22,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519470995881736510, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.88
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 2519470995881736510, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56,9 +60,17 @@ PrefabInstance:
       propertyPath: _owner
       value: 
       objectReference: {fileID: 5259269587601534442}
+    - target: {fileID: 2521927511501621276, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
+      propertyPath: _damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4325622728901642318, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
       propertyPath: m_Name
       value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168057159460074250, guid: 436d6814ceebb8141b5b3d68e5689c4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

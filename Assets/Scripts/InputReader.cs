@@ -51,12 +51,12 @@ public class InputReader : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputActions.FindActionMap("Standard").Enable();
+        _inputActions.FindActionMap("Player").Enable();
     }
 
     private void OnDisable()
     {
-        _inputActions.FindActionMap("Standard").Disable();
+        _inputActions.FindActionMap("Player").Disable();
     }
 
     private void AttackPerformed(InputAction.CallbackContext context)

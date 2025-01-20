@@ -10,7 +10,7 @@ public class AttackState : State
 
     public AttackState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        _comboAttacks = stateMachine.BasicCombo.Attacks;
+        //_comboAttacks = stateMachine.BasicCombo.Attacks;
     }
 
     public override void Enter()
@@ -18,8 +18,9 @@ public class AttackState : State
         _comboIndex = 0;
         _timekeeper = 0;
         //_stateMachine.Reader.OnAttack += NextComboAttack;
-        _animator.CrossFadeInFixedTime(_comboAttacks[0].animationName, 0.1f);
+        //_animator.CrossFadeInFixedTime(_comboAttacks[0].animationName, 0.1f);
         //_stateMachine.Weapon.enabled = true;
+        _animator.CrossFadeInFixedTime("Sword Attack 1", 0.1f);
     }
 
     public override void Tick(float deltaTime)

@@ -9,6 +9,7 @@ public class FirstBossStateMachine : StateMachine
     {
         InitializeComponents();
         lifeStats.OnTakeDamage += OnTakeDamage;
+        lifeStats.OnDead += OnDead;
     }
 
     // Update is called once per frame
@@ -21,5 +22,10 @@ public class FirstBossStateMachine : StateMachine
     {
         transform.rotation = Quaternion.LookRotation(-direction);
         charAnimator.Play("TakeDamage");
+    }
+
+    void OnDead()
+    {
+        charAnimator.Play("Die");
     }
 }

@@ -14,12 +14,6 @@ public class Overlay : MonoBehaviour
         _bossLife.OnHpChange += UpdateBossBar;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void UpdatePlayerBar (int oldHP, int newHP)
     {
         _playerLifeBar.fillAmount = (float)newHP / _playerLife.maxHP;
